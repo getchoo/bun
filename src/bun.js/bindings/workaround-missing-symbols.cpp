@@ -285,69 +285,69 @@ void std::__libcpp_verbose_abort(char const* format, ...)
     Bun__panic(buffer, len);
 }
 
-extern "C" int pthread_self_is_exiting_np()
-{
-    static void* pthread_self_is_exiting_np_ptr = nullptr;
-    static bool pthread_self_is_exiting_np_ptr_initialized = false;
-    if (UNLIKELY(!pthread_self_is_exiting_np_ptr_initialized)) {
-        pthread_self_is_exiting_np_ptr_initialized = true;
-        pthread_self_is_exiting_np_ptr = dlsym(RTLD_DEFAULT, "pthread_self_is_exiting_np");
-    }
+// extern "C" int pthread_self_is_exiting_np()
+// {
+//     static void* pthread_self_is_exiting_np_ptr = nullptr;
+//     static bool pthread_self_is_exiting_np_ptr_initialized = false;
+//     if (UNLIKELY(!pthread_self_is_exiting_np_ptr_initialized)) {
+//         pthread_self_is_exiting_np_ptr_initialized = true;
+//         pthread_self_is_exiting_np_ptr = dlsym(RTLD_DEFAULT, "pthread_self_is_exiting_np");
+//     }
 
-    if (UNLIKELY(pthread_self_is_exiting_np_ptr == nullptr))
-        return 0;
+//     if (UNLIKELY(pthread_self_is_exiting_np_ptr == nullptr))
+//         return 0;
 
-    return ((int (*)())pthread_self_is_exiting_np_ptr)();
-}
+//     return ((int (*)())pthread_self_is_exiting_np_ptr)();
+// }
 
-extern "C" int posix_spawn_file_actions_addchdir_np(
-    void* file_actions,
-    const char* path)
-{
-    static void* posix_spawn_file_actions_addchdir_np_ptr = nullptr;
-    static bool posix_spawn_file_actions_addchdir_np_ptr_initialized = false;
-    if (UNLIKELY(!posix_spawn_file_actions_addchdir_np_ptr_initialized)) {
-        posix_spawn_file_actions_addchdir_np_ptr_initialized = true;
-        posix_spawn_file_actions_addchdir_np_ptr = dlsym(RTLD_DEFAULT, "posix_spawn_file_actions_addchdir_np");
-    }
+// extern "C" int posix_spawn_file_actions_addchdir_np(
+//     void* file_actions,
+//     const char* path)
+// {
+//     static void* posix_spawn_file_actions_addchdir_np_ptr = nullptr;
+//     static bool posix_spawn_file_actions_addchdir_np_ptr_initialized = false;
+//     if (UNLIKELY(!posix_spawn_file_actions_addchdir_np_ptr_initialized)) {
+//         posix_spawn_file_actions_addchdir_np_ptr_initialized = true;
+//         posix_spawn_file_actions_addchdir_np_ptr = dlsym(RTLD_DEFAULT, "posix_spawn_file_actions_addchdir_np");
+//     }
 
-    if (UNLIKELY(posix_spawn_file_actions_addchdir_np_ptr == nullptr))
-        return 0;
+//     if (UNLIKELY(posix_spawn_file_actions_addchdir_np_ptr == nullptr))
+//         return 0;
 
-    return ((int (*)(void*, const char*))posix_spawn_file_actions_addchdir_np_ptr)(file_actions, path);
-}
+//     return ((int (*)(void*, const char*))posix_spawn_file_actions_addchdir_np_ptr)(file_actions, path);
+// }
 
-extern "C" int posix_spawn_file_actions_addinherit_np(void* ptr,
-    int status)
-{
-    static void* posix_spawn_file_actions_addinherit_np_ptr = nullptr;
-    static bool posix_spawn_file_actions_addinherit_np_ptr_initialized = false;
-    if (UNLIKELY(!posix_spawn_file_actions_addinherit_np_ptr_initialized)) {
-        posix_spawn_file_actions_addinherit_np_ptr_initialized = true;
-        posix_spawn_file_actions_addinherit_np_ptr = dlsym(RTLD_DEFAULT, "posix_spawn_file_actions_addinherit_np");
-    }
+// extern "C" int posix_spawn_file_actions_addinherit_np(void* ptr,
+//     int status)
+// {
+//     static void* posix_spawn_file_actions_addinherit_np_ptr = nullptr;
+//     static bool posix_spawn_file_actions_addinherit_np_ptr_initialized = false;
+//     if (UNLIKELY(!posix_spawn_file_actions_addinherit_np_ptr_initialized)) {
+//         posix_spawn_file_actions_addinherit_np_ptr_initialized = true;
+//         posix_spawn_file_actions_addinherit_np_ptr = dlsym(RTLD_DEFAULT, "posix_spawn_file_actions_addinherit_np");
+//     }
 
-    if (UNLIKELY(posix_spawn_file_actions_addinherit_np_ptr == nullptr))
-        return 0;
+//     if (UNLIKELY(posix_spawn_file_actions_addinherit_np_ptr == nullptr))
+//         return 0;
 
-    return ((int (*)(void*, int))posix_spawn_file_actions_addinherit_np_ptr)(ptr, status);
-}
+//     return ((int (*)(void*, int))posix_spawn_file_actions_addinherit_np_ptr)(ptr, status);
+// }
 
-extern "C" int posix_spawn_file_actions_addfchdir_np(void* ptr,
-    int fd)
-{
-    static void* posix_spawn_file_actions_addfchdir_np_ptr = nullptr;
-    static bool posix_spawn_file_actions_addfchdir_np_ptr_initialized = false;
-    if (UNLIKELY(!posix_spawn_file_actions_addfchdir_np_ptr_initialized)) {
-        posix_spawn_file_actions_addfchdir_np_ptr_initialized = true;
-        posix_spawn_file_actions_addfchdir_np_ptr = dlsym(RTLD_DEFAULT, "posix_spawn_file_actions_addfchdir_np");
-    }
+// extern "C" int posix_spawn_file_actions_addfchdir_np(void* ptr,
+//     int fd)
+// {
+//     static void* posix_spawn_file_actions_addfchdir_np_ptr = nullptr;
+//     static bool posix_spawn_file_actions_addfchdir_np_ptr_initialized = false;
+//     if (UNLIKELY(!posix_spawn_file_actions_addfchdir_np_ptr_initialized)) {
+//         posix_spawn_file_actions_addfchdir_np_ptr_initialized = true;
+//         posix_spawn_file_actions_addfchdir_np_ptr = dlsym(RTLD_DEFAULT, "posix_spawn_file_actions_addfchdir_np");
+//     }
 
-    if (UNLIKELY(posix_spawn_file_actions_addfchdir_np_ptr == nullptr))
-        return 0;
+//     if (UNLIKELY(posix_spawn_file_actions_addfchdir_np_ptr == nullptr))
+//         return 0;
 
-    return ((int (*)(void*, int))posix_spawn_file_actions_addfchdir_np_ptr)(ptr, fd);
-}
+//     return ((int (*)(void*, int))posix_spawn_file_actions_addfchdir_np_ptr)(ptr, fd);
+// }
 
 extern "C" int __ulock_wait(uint32_t operation, void* addr, uint64_t value,
     uint32_t timeout_microseconds); /* timeout is specified in microseconds */
